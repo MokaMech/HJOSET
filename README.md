@@ -20,12 +20,10 @@ Additionnal functions such as GRFM estimation need :
 ## Content 
 The different tools proposed in this framework include:
 
-- The use of OpenSim software - an open free software offering tools to execute biomechanics analysis -  and its tools "Scaling", "Inverse Kinematics", "Inverse Dynamics", "Residual Reduction Algorithm" and "Computed Muscle Control". This sequence of tools enables, from motion capture data augmented with Ground Reaction Forces and Moments (GRFM), to successively determine joint kinematics from the task recording, calculate the joint torques required to generate these trajectories, and finally trace back to the muscle activation of the simulated musculoskeletal model that allows for the completion of this task.
+- The use of OpenSim tools such as "Scaling", "Inverse Kinematics", "Inverse Dynamics", "Residual Reduction Algorithm" and "Computed Muscle Control". This sequence of tools enables, from motion capture data augmented with Ground Reaction Forces and Moments (GRFM), to successively determine joint kinematics from the task recording, calculate the joint torques required to generate these trajectories, and finally trace back to the muscle activation of the simulated musculoskeletal model that allows for the completion of this task.
 This last function "CMC" is often used in two scenarios :
-  * Adding external assistance to the model and defining the actuation profile of this assistance.
+  * The possibility to add external assistance to the model and defining the actuation profile of this assistance.
   * Thanks to the muscle activation values with and without extra assistance, calculating a performance metric based on the variations in activity of certain muscles during        the task with assistance.
-
-
 
 - In the case where motion capture data is not augmented with GRFM data, or to simulate the wearing of additional load not present during the task recording, a MatLab toolkit named "CusToM" presented in Muller et al. 2019 [^3] allows for the prediction of GRFM from the kinematic data and the characteristics of the simulated user.
 
