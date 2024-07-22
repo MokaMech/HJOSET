@@ -1,0 +1,2608 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="40000">
+	<Model name="GIL06_10DOF_backpack_AFO">
+		<!--The model's ground reference frame.-->
+		<Ground name="ground">
+			<!--The geometry used to display the axes of this Frame.-->
+			<FrameGeometry name="frame_geometry">
+				<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+				<socket_frame>..</socket_frame>
+				<!--Scale factors in X, Y, Z directions respectively.-->
+				<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+			</FrameGeometry>
+			<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+			<attached_geometry />
+			<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+			<WrapObjectSet name="wrapobjectset">
+				<objects />
+				<groups />
+			</WrapObjectSet>
+		</Ground>
+		<!--Acceleration due to gravity, expressed in ground.-->
+		<gravity>0 -9.8066499999999994 0</gravity>
+		<!--Credits (e.g., model author names) associated with the model.-->
+		<credits>A planar reduced gait model with 10 degrees of freedom and 18 muscles by Ajay Seth. Closely based on Delp S.L., Loan J.P., Hoy M.G., Zajac F.E., Topp E.L., Rosen J.M., Thelen D.G., Anderson F.C., Seth A. Notes: 3D, 23 DOF gait model created by D.G. Thelen, Univ. of Wisconsin-Madison, and Ajay Seth, Frank C. Anderson, and Scott L. Delp, Stanford University. Lower extremity joint defintions based on Delp et al. (1990). Low back joint and anthropometry based on Anderson and Pandy (1999, 2001). Planar knee model of Yamaguchi and Zajac (1989). Seth replaced tibia translation constraints with a CustomJoint for the knee and removed the patella to eliminate all kinematic constraints; insertions of the quadrucepts are handled with moving points in the tibia frame as defined by Delp 1990. Number of muscles was reduced by Anderson to improve simulation speed for demonstrations and is not intended to be used in research. License: Creative Commons (CCBY 3.0). You are free to distribute, remix, tweak, and build upon this work, even commercially, as long as you credit us for the original creation. http://creativecommons.org/licenses/by/3.0/ More Information: http://simtk-confluence.stanford.edu:8080/display/OpenSim/Gait+2392+and+2354+Models</credits>
+		<!--Publications and references associated with the model.-->
+		<publications>Delp, S.L., Loan, J.P., Hoy, M.G., Zajac, F.E., Topp E.L., Rosen, J.M.: An interactive graphics-based model of the lower extremity to study orthopaedic surgical procedures, IEEE Transactions on Biomedical Engineering, vol. 37, pp. 757-767, 1990. Yamaguchi G.T., Zajac F.E.: A planar model of the knee joint to characterize the knee extensor mechanism." J . Biomech. vol. 22. pp. 1-10. 1989. Anderson F.C., Pandy M.G.: A dynamic optimization solution for vertical jumping in three dimensions. Computer Methods in Biomechanics and Biomedical Engineering 2:201-231, 1999. Anderson F.C., Pandy M.G.: Dynamic optimization of human walking. Journal of Biomechanical Engineering 123:381-390, 2001.</publications>
+		<!--Units for all lengths.-->
+		<length_units>meters</length_units>
+		<!--Units for all forces.-->
+		<force_units>N</force_units>
+		<!--List of bodies that make up this model.-->
+		<BodySet name="bodyset">
+			<objects>
+				<Body name="pelvis">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="pelvis_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.97166200000000003 0.97166200000000003 0.97166200000000003</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>sacrum.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="pelvis_geom_2">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.97166200000000003 0.97166200000000003 0.97166200000000003</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>pelvis.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="pelvis_geom_3">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.97166200000000003 0.97166200000000003 0.97166200000000003</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>l_pelvis.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>12.832321332116454</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>-0.068696503399999997 0 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.10575334252168916 0.089602297019835853 0.059563409844414425 0 0 0</inertia>
+				</Body>
+				<Body name="femur_r">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="femur_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.92801699999999998 0.92801699999999998 0.92801699999999998</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>femur_r.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>10.134886103298632</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 -0.15776289000000002 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.12565014441342887 0.032937416496724076 0.13250037633439996 0 0 0</inertia>
+				</Body>
+				<Body name="tibia_r">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="tibia_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>tibia_r.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="tibia_r_geom_2">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>fibula.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>4.0397241520609457</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 -0.18004078439999999 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.051068634365155664 0.0051676594298074195 0.051777920953560611 0 0 0</inertia>
+				</Body>
+				<Body name="talus_r">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="talus_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>talus.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.10896086721674836</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 0 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.0010132665548641998 0.0010132665548641998 0.0010132665548641998 0 0 0</inertia>
+				</Body>
+				<Body name="calcn_r">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="calcn_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96321100000000004 0.96321100000000004 0.96321100000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>foot.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>1.3620108402093545</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.096321100000000007 0.028896330000000001 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.0014152770168874432 0.0039425574041864484 0.0041447398351703701 0 0 0</inertia>
+				</Body>
+				<Body name="toes_r">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="toes_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96321100000000004 0.96321100000000004 0.96321100000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>bofoot.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.23600923839147692</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.033327100599999999 0.0057792660000000008 -0.016856192500000002</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.00010109121549196024 0.00020218243098392048 0.00010109121549196024 0 0 0</inertia>
+				</Body>
+				<Body name="femur_l">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="femur_l_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.92801699999999998 0.92801699999999998 0.92801699999999998</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>femur_l.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>10.134886103298632</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 -0.15776289000000002 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.12565014441342887 0.032937416496724076 0.13250037633439996 0 0 0</inertia>
+				</Body>
+				<Body name="tibia_l">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="tibia_l_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>tibia_l.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="tibia_l_geom_2">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>l_fibula.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>4.0397241520609457</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 -0.18004078439999999 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.051068634365155664 0.0051676594298074195 0.051777920953560611 0 0 0</inertia>
+				</Body>
+				<Body name="talus_l">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="talus_l_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96433199999999997 0.96433199999999997 0.96433199999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>l_talus.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.10896086721674836</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 0 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.0010132665548641998 0.0010132665548641998 0.0010132665548641998 0 0 0</inertia>
+				</Body>
+				<Body name="calcn_l">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="calcn_l_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96321100000000004 0.96321100000000004 0.96321100000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>l_foot.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>1.3620108402093545</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.096321100000000007 0.028896330000000001 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.0014152770168874432 0.0039425574041864484 0.0041447398351703701 0 0 0</inertia>
+				</Body>
+				<Body name="toes_l">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="toes_l_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.96321100000000004 0.96321100000000004 0.96321100000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>l_bofoot.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.23600923839147692</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.033327100599999999 0.0057792660000000008 0.016856192500000002</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.00010109121549196024 0.00020218243098392048 0.00010109121549196024 0 0 0</inertia>
+				</Body>
+				<Body name="torso">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="torso_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.95894599999999997 0.95894599999999997 0.95894599999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>hat_spine.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="torso_geom_2">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.95894599999999997 0.95894599999999997 0.95894599999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>hat_jaw.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="torso_geom_3">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.95894599999999997 0.95894599999999997 0.95894599999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>hat_skull.vtp</mesh_file>
+						</Mesh>
+						<Mesh name="torso_geom_4">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.95894599999999997 0.95894599999999997 0.95894599999999997</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 1 1</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>hat_ribs.vtp</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>37.304496265529274</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.045037941544911149 0.30686271999999998 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>1.4774188368252359 0.75699554508068212 1.4342335185023007 0 0 0</inertia>
+				</Body>
+				<Body name="backpack">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Brick name="default">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+								<visible>true</visible>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>0.5</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>1 0.5 0</color>
+							</Appearance>
+							<!--Half lengths in X, Y, Z respectively.-->
+							<half_lengths>0.11 0.27000000000000002 0.20000000000000001</half_lengths>
+						</Brick>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<objects />
+						<groups />
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>20</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 0 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>2.6669999999999998 3.3330000000000002 1.7333000000000001 0 0 0</inertia>
+				</Body>
+				<Body name="AFO_lower">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="AFO_lower_r_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.90000000000000002 0.5 0.80000000000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>0.90000000000000002 0.69999999999999996 0</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>afoPlate.stl</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<!--All properties of this object have their default values.-->
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.10000000000000001</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0.080000000000000002 -0.050000000000000003 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.0050000000000000001 0.012500000000000001 0.014 0 0 0</inertia>
+				</Body>
+				<Body name="AFO_upper">
+					<!--The geometry used to display the axes of this Frame.-->
+					<FrameGeometry name="frame_geometry">
+						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+						<socket_frame>..</socket_frame>
+						<!--Scale factors in X, Y, Z directions respectively.-->
+						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+					</FrameGeometry>
+					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
+					<attached_geometry>
+						<Mesh name="AFO_upper_geom_1">
+							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+							<socket_frame>..</socket_frame>
+							<!--Scale factors in X, Y, Z directions respectively.-->
+							<scale_factors>0.80000000000000004 1 0.80000000000000004</scale_factors>
+							<!--Default appearance attributes for this Geometry-->
+							<Appearance>
+								<!--The opacity used to display the geometry between 0:transparent, 1:opaque.-->
+								<opacity>1</opacity>
+								<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+								<color>0.90000000000000002 0.69999999999999996 0</color>
+							</Appearance>
+							<!--Name of geometry file.-->
+							<mesh_file>afoCuff.stl</mesh_file>
+						</Mesh>
+					</attached_geometry>
+					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
+					<WrapObjectSet name="wrapobjectset">
+						<!--All properties of this object have their default values.-->
+					</WrapObjectSet>
+					<!--The mass of the body (kg)-->
+					<mass>0.10000000000000001</mass>
+					<!--The location (Vec3) of the mass center in the body frame.-->
+					<mass_center>0 0.25 0</mass_center>
+					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
+					<inertia>0.02 0.0050000000000000001 0.02 0 0 0</inertia>
+				</Body>
+			</objects>
+			<groups />
+		</BodySet>
+		<!--List of joints that connect the bodies.-->
+		<JointSet name="jointset">
+			<objects>
+				<CustomJoint name="ground_pelvis">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>ground_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>pelvis_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="pelvis_tilt">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1.5707963300000001 1.5707963300000001</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+						<Coordinate name="pelvis_tx">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-5 5</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+						<Coordinate name="pelvis_ty">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0.94999999999999996</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1 2</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="ground_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/ground</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="pelvis_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/pelvis</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+					<!--Defines how the child body moves with respect to the parent as a function of the generalized coordinates.-->
+					<SpatialTransform>
+						<!--3 Axes for rotations are listed first.-->
+						<TransformAxis name="rotation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>pelvis_tilt</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="rotation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<TransformAxis name="rotation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<!--3 Axes for translations are listed next.-->
+						<TransformAxis name="translation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>pelvis_tx</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="translation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>pelvis_ty</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="translation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<Constant name="function">
+										<value>0</value>
+									</Constant>
+								</function>
+								<scale>1</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+					</SpatialTransform>
+				</CustomJoint>
+				<PinJoint name="hip_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>pelvis_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>femur_r_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="hip_flexion_r">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-2.0943950999999998 2.0943950999999998</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="pelvis_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/pelvis</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>-0.068696503399999997 -0.064226858200000014 0.081133777000000004</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="femur_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/femur_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+				<CustomJoint name="knee_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>femur_r_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>tibia_r_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="knee_angle_r">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-2.0943950999999998 0.17453293</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="femur_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/femur_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="tibia_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/tibia_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+					<!--Defines how the child body moves with respect to the parent as a function of the generalized coordinates.-->
+					<SpatialTransform>
+						<!--3 Axes for rotations are listed first.-->
+						<TransformAxis name="rotation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_r</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="rotation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<TransformAxis name="rotation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<!--3 Axes for translations are listed next.-->
+						<TransformAxis name="translation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_r</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<SimmSpline name="function">
+										<x> -2.0944 -1.74533 -1.39626 -1.0472 -0.698132 -0.349066 -0.174533 0.197344 0.337395 0.490178 1.52146 2.0944</x>
+										<y> -0.0032 0.00179 0.00411 0.0041 0.00212 -0.001 -0.0031 -0.005227 -0.005435 -0.005574 -0.005435 -0.00525</y>
+									</SimmSpline>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+						<TransformAxis name="translation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_r</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<SimmSpline name="function">
+										<x> -2.0944 -1.22173 -0.523599 -0.349066 -0.174533 0.159149 2.0944</x>
+										<y> -0.4226 -0.4082 -0.399 -0.3976 -0.3966 -0.395264 -0.396</y>
+									</SimmSpline>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+						<TransformAxis name="translation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<Constant name="function">
+										<value>0</value>
+									</Constant>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+					</SpatialTransform>
+				</CustomJoint>
+				<PinJoint name="ankle_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>tibia_r_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>talus_r_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="ankle_angle_r">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1.5707963300000001 1.5707963300000001</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="tibia_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/tibia_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 -0.41466275999999996 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="talus_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+				<WeldJoint name="subtalar_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>talus_r_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>calcn_r_offset</socket_child_frame>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="talus_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>-0.047030471640000002 -0.0404537274 0.0076375094399999998</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="calcn_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/calcn_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</WeldJoint>
+				<WeldJoint name="mtp_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>calcn_r_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>toes_r_offset</socket_child_frame>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="calcn_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/calcn_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0.17222212679999999 -0.0019264220000000001 0.0010402678800000001</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="toes_r_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/toes_r</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</WeldJoint>
+				<PinJoint name="hip_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>pelvis_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>femur_l_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="hip_flexion_l">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-2.0943950999999998 2.0943950999999998</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="pelvis_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/pelvis</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>-0.068696503399999997 -0.064226858200000014 -0.081133777000000004</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="femur_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/femur_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+				<CustomJoint name="knee_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>femur_l_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>tibia_l_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="knee_angle_l">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-2.0943950999999998 0.17453293</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="femur_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/femur_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="tibia_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/tibia_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+					<!--Defines how the child body moves with respect to the parent as a function of the generalized coordinates.-->
+					<SpatialTransform>
+						<!--3 Axes for rotations are listed first.-->
+						<TransformAxis name="rotation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_l</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<LinearFunction name="function">
+								<coefficients> 1 0</coefficients>
+							</LinearFunction>
+						</TransformAxis>
+						<TransformAxis name="rotation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<TransformAxis name="rotation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<Constant name="function">
+								<value>0</value>
+							</Constant>
+						</TransformAxis>
+						<!--3 Axes for translations are listed next.-->
+						<TransformAxis name="translation1">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_l</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>1 0 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<SimmSpline name="function">
+										<x> -2.0944 -1.74533 -1.39626 -1.0472 -0.698132 -0.349066 -0.174533 0.197344 0.337395 0.490178 1.52146 2.0944</x>
+										<y> -0.0032 0.00179 0.00411 0.0041 0.00212 -0.001 -0.0031 -0.005227 -0.005435 -0.005574 -0.005435 -0.00525</y>
+									</SimmSpline>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+						<TransformAxis name="translation2">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates>knee_angle_l</coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 1 0</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<SimmSpline name="function">
+										<x> -2.0944 -1.22173 -0.523599 -0.349066 -0.174533 0.159149 2.0944</x>
+										<y> -0.4226 -0.4082 -0.399 -0.3976 -0.3966 -0.395264 -0.396</y>
+									</SimmSpline>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+						<TransformAxis name="translation3">
+							<!--Names of the coordinates that serve as the independent variables         of the transform function.-->
+							<coordinates></coordinates>
+							<!--Rotation or translation axis for the transform.-->
+							<axis>0 0 1</axis>
+							<!--Transform function of the generalized coordinates used to        represent the amount of displacement along a specified axis.-->
+							<MultiplierFunction name="function">
+								<function>
+									<Constant name="function">
+										<value>0</value>
+									</Constant>
+								</function>
+								<scale>0.92801699999999998</scale>
+							</MultiplierFunction>
+						</TransformAxis>
+					</SpatialTransform>
+				</CustomJoint>
+				<PinJoint name="ankle_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>tibia_l_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>talus_l_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="ankle_angle_l">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1.5707963300000001 1.5707963300000001</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="tibia_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/tibia_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 -0.41466275999999996 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="talus_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+				<WeldJoint name="subtalar_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>talus_l_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>calcn_l_offset</socket_child_frame>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="talus_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>-0.047030471640000002 -0.0404537274 -0.0076375094399999998</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="calcn_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/calcn_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</WeldJoint>
+				<WeldJoint name="mtp_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>calcn_l_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>toes_l_offset</socket_child_frame>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="calcn_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/calcn_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0.17222212679999999 -0.0019264220000000001 -0.0010402678800000001</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="toes_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/toes_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</WeldJoint>
+				<PinJoint name="back">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>pelvis_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>torso_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="lumbar_extension">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1.5707963300000001 1.5707963300000001</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="pelvis_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/pelvis</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>-0.097846363399999997 0.079190453000000008 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="torso_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/torso</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+				<WeldJoint name="backpack_strips">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>torso_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>backpack_offset</socket_child_frame>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="backpack_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/backpack</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0.20000000000000001 -0.20000000000000001 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="torso_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/torso</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</WeldJoint>
+				<SliderJoint name="AFO_foot_slider">
+					 <!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					 <socket_parent_frame>talus_l_offset</socket_parent_frame>
+					 <!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					 <socket_child_frame>AFO_lower_offset</socket_child_frame>
+					 <!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					 <coordinates>
+						 <Coordinate name="AFO_foot_slider">
+						 <!--List of components that this component owns and serializes.-->
+						 <components />
+						 <!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+						 <default_value>0</default_value>
+						 <!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+						 <default_speed_value>0</default_speed_value>
+						 <!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+						 <range>-0.5 0.5</range>
+						 <!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+						 <clamped>false</clamped>
+						 <!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+						 <locked>false</locked>
+						 <!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+						 <prescribed_function />
+						 <!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+						 <prescribed>false</prescribed>
+						 <!--Flag identifies whether or not this coordinate can change freely when posing the model to satisfy kinematic constraints. When true, the coordinate's initial or specified value is ignored when considering constraints. This allows values for important coordinates, which have this flag set to false, to dictate the value of unimportant coordinates if they are linked via constraints.-->
+						 <is_free_to_satisfy_constraints>true</is_free_to_satisfy_constraints>
+						 </Coordinate>
+					 </coordinates>
+					 <!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					 <frames>
+						<PhysicalOffsetFrame name="talus_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="AFO_lower_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/AFO_lower</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					 </frames>
+				 </SliderJoint>
+				<PinJoint name="AFO_hinge">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The parent frame for the joint.).-->
+					<socket_parent_frame>AFO_lower_offset</socket_parent_frame>
+					<!--Path to a Component that satisfies the Socket 'child_frame' of type PhysicalFrame (description: The child frame for the joint.).-->
+					<socket_child_frame>AFO_upper_offset</socket_child_frame>
+					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
+					<coordinates>
+						<Coordinate name="AFO_hinge">
+							<!--The value of this coordinate before any value has been set. Rotational coordinate value is in radians and Translational in meters.-->
+							<default_value>0</default_value>
+							<!--The speed value of this coordinate before any value has been set. Rotational coordinate value is in rad/s and Translational in m/s.-->
+							<default_speed_value>0</default_speed_value>
+							<!--The minimum and maximum values that the coordinate can range between. Rotational coordinate range in radians and Translational in meters.-->
+							<range>-1.5707963300000001 1.5707963300000001</range>
+							<!--Flag indicating whether or not the values of the coordinates should be limited to the range, above.-->
+							<clamped>false</clamped>
+							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
+							<locked>false</locked>
+							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
+							<prescribed_function />
+							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
+							<prescribed>false</prescribed>
+							<!--Flag identifies whether or not this coordinate can change freely when posing the model to satisfy kinematic constraints. When true, the coordinate's initial or specified value is ignored when considering constraints. This allows values for important coordinates, which have this flag set to false, to dictate the value of unimportant coordinates if they are linked via constraints.-->
+							<is_free_to_satisfy_constraints>true</is_free_to_satisfy_constraints>
+						</Coordinate>
+					</coordinates>
+					<!--Physical offset frames owned by the Joint that are typically used to satisfy the owning Joint's parent and child frame connections (sockets). PhysicalOffsetFrames are often used to describe the fixed transformation from a Body's origin to another location of interest on the Body (e.g., the joint center). When the joint is deleted, so are the PhysicalOffsetFrame components in this list.-->
+					<frames>
+						<PhysicalOffsetFrame name="AFO_lower_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/AFO_lower</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="AFO_upper_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/AFO_upper</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+				</PinJoint>
+			</objects>
+			<groups />
+		</JointSet>
+		<!--Controllers that provide the control inputs for Actuators.-->
+		<ControllerSet name="controllerset">
+			<objects />
+			<groups />
+		</ControllerSet>
+		<!--Constraints in the model.-->
+		<ConstraintSet name="constraintset">
+			<objects />
+			<groups />
+		</ConstraintSet>
+		<!--Forces in the model (includes Actuators).-->
+		<ForceSet name="forceset">
+			<objects>
+				<Millard2012EquilibriumMuscle name="soleus_l">
+					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+					<appliesForce>false</appliesForce>
+					<!--The set of points defining the path of the actuator.-->
+					<GeometryPath name="geometrypath">
+						<!--The set of points defining the path-->
+						<PathPointSet>
+							<objects>
+								<PathPoint name="soleus_l-P1">
+									<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame in which this path point is defined.).-->
+									<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+									<!--The fixed location of the path point expressed in its parent frame.-->
+									<location>-0.0023143967999999997 -0.14783209559999999 -0.0068467572000000003</location>
+								</PathPoint>
+								<PathPoint name="soleus_l-P2">
+									<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame in which this path point is defined.).-->
+									<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+									<!--The fixed location of the path point expressed in its parent frame.-->
+									<location>0 0.029859541 0.0051050182999999999</location>
+								</PathPoint>
+							</objects>
+							<groups />
+						</PathPointSet>
+						<!--The wrap objects that are associated with this path-->
+						<PathWrapSet>
+							<objects />
+							<groups />
+						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
+					</GeometryPath>
+					<!--The maximum force this actuator can produce.-->
+					<optimal_force>1</optimal_force>
+					<!--Maximum isometric force that the fibers can generate-->
+					<max_isometric_force>5137</max_isometric_force>
+					<!--Optimal length of the muscle fibers-->
+					<optimal_fiber_length>0.048222470463120976</optimal_fiber_length>
+					<!--Resting length of the tendon-->
+					<tendon_slack_length>0.24111235231560485</tendon_slack_length>
+					<!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+					<pennation_angle_at_optimal>0.43633231</pennation_angle_at_optimal>
+					<!--Maximum contraction velocity of the fibers, in optimal fiberlengths/second-->
+					<max_contraction_velocity>10</max_contraction_velocity>
+					<!--Activation time constant (in seconds).-->
+					<activation_time_constant>0.01</activation_time_constant>
+					<!--Deactivation time constant (in seconds).-->
+					<deactivation_time_constant>0.040000000000000001</deactivation_time_constant>
+					<!--Activation lower bound.-->
+					<minimum_activation>0.01</minimum_activation>
+					<!--Active-force-length curve.-->
+					<ActiveForceLengthCurve name="soleus_l_ActiveForceLengthCurve">
+						<!--Minimum value of the active-force-length curve-->
+						<minimum_value>0</minimum_value>
+					</ActiveForceLengthCurve>
+					<!--Force-velocity curve.-->
+					<ForceVelocityCurve name="soleus_l_ForceVelocityCurve">
+						<!--Curve slope at the maximum normalized concentric (shortening) velocity (normalized velocity of -1)-->
+						<concentric_slope_at_vmax>0</concentric_slope_at_vmax>
+						<!--Curve slope just before reaching concentric_slope_at_vmax-->
+						<concentric_slope_near_vmax>0.25</concentric_slope_near_vmax>
+						<!--Curve slope at isometric (normalized velocity of 0)-->
+						<isometric_slope>5</isometric_slope>
+						<!--Curve slope at the maximum normalized eccentric (lengthening) velocity (normalized velocity of 1)-->
+						<eccentric_slope_at_vmax>0</eccentric_slope_at_vmax>
+						<!--Curve slope just before reaching eccentric_slope_at_vmax-->
+						<eccentric_slope_near_vmax>0.14999999999999999</eccentric_slope_near_vmax>
+						<!--Curve value at the maximum normalized eccentric contraction velocity-->
+						<max_eccentric_velocity_force_multiplier>1.3999999999999999</max_eccentric_velocity_force_multiplier>
+					</ForceVelocityCurve>
+					<!--Passive-force-length curve.-->
+					<FiberForceLengthCurve name="soleus_l_FiberForceLengthCurve">
+						<!--All properties of this object have their default values.-->
+					</FiberForceLengthCurve>
+					<!--Tendon-force-length curve.-->
+					<TendonForceLengthCurve name="soleus_l_TendonForceLengthCurve">
+						<!--All properties of this object have their default values.-->
+					</TendonForceLengthCurve>
+				</Millard2012EquilibriumMuscle>
+				<BushingForce name="BushingForces_upperAfoAttach">
+					<!--List of components that this component owns and serializes.-->
+					<components />
+					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+					<appliesForce>true</appliesForce>
+					<!--Path to a Component that satisfies the Socket 'frame1' of type F (description: The first frame participating in this linker.).-->
+					<socket_frame1>AFO_upper_offset</socket_frame1>
+					<!--Path to a Component that satisfies the Socket 'frame2' of type F (description: The second frame participating in this linker.).-->
+					<socket_frame2>tibia_l_offset</socket_frame2>
+					<!--Frames created/added to satisfy this component's connections.-->
+					<frames>
+						<PhysicalOffsetFrame name="AFO_upper_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/AFO_upper</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="tibia_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/tibia_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+					<!--Stiffness parameters resisting rotational deviation (Nm/rad).-->
+					<rotational_stiffness>0 0 50</rotational_stiffness>
+					<!--Stiffness parameters resisting relative translation (N/m).-->
+					<translational_stiffness>300 0 0</translational_stiffness>
+					<!--Damping parameters resisting angular deviation rate. (Nm/(rad/s))-->
+					<rotational_damping>0 0 15</rotational_damping>
+					<!--Damping parameters resisting relative translational velocity. (N/(m/s))-->
+					<translational_damping>40 0 0</translational_damping>
+				</BushingForce>
+				<BushingForce name="BushingForces_lowerAfoAttach">
+					<!--List of components that this component owns and serializes.-->
+					<components />
+					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+					<appliesForce>true</appliesForce>
+					<!--Path to a Component that satisfies the Socket 'frame1' of type F (description: The first frame participating in this linker.).-->
+					<socket_frame1>AFO_lower_offset</socket_frame1>
+					<!--Path to a Component that satisfies the Socket 'frame2' of type F (description: The second frame participating in this linker.).-->
+					<socket_frame2>talus_l_offset</socket_frame2>
+					<!--Frames created/added to satisfy this component's connections.-->
+					<frames>
+						<PhysicalOffsetFrame name="AFO_lower_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/AFO_lower</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+						<PhysicalOffsetFrame name="talus_l_offset">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>/bodyset/talus_l</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 0 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>0 0 0</orientation>
+						</PhysicalOffsetFrame>
+					</frames>
+					<!--Stiffness parameters resisting rotational deviation (Nm/rad).-->
+					<rotational_stiffness>0 0 0</rotational_stiffness>
+					<!--Stiffness parameters resisting relative translation (N/m).-->
+					<translational_stiffness>300 0 0</translational_stiffness>
+					<!--Damping parameters resisting angular deviation rate. (Nm/(rad/s))-->
+					<rotational_damping>0 0 0</rotational_damping>
+					<!--Damping parameters resisting relative translational velocity. (N/(m/s))-->
+					<translational_damping>40 0 0</translational_damping>
+				</BushingForce>
+			</objects>
+			<groups />
+		</ForceSet>
+		<!--Markers in the model.-->
+		<MarkerSet name="markerset">
+			<objects>
+				<Marker name="Sternum">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.057536023647696645 0.33501298322541401 1.0003532882799998e-06</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Acromium">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.023850713122799998 0.39316785999999998 0.16166391141</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Acromium">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.021105346619400001 0.39316785999999998 -0.16491090256599999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="Top.Head">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.057070040981799998 0.62668335973742695 0.010070563208199998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.ASIS">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.022249990971799999 0.034846131308800002 0.12642877279200002</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.ASIS">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.028307331879800002 0.026875296424200001 -0.12815638782800001</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="V.Sacral">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.16721428524199999 0.038869297819800003 0.0060227788906600009</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Thigh.Upper">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.047061226897199999 -0.20423890937699998 0.082023246553500004</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Thigh.Front">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.100134890334 -0.26146600569900003 -0.0064043752393799997</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Thigh.Rear">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0366667868853 -0.31637491555500002 0.073270932623099999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Knee.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.00054420308905499997 -0.39555054194399997 0.056183169998700003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Knee.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0022553689952700003 -0.41102615343600002 -0.056375362319399998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Shank.Upper">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.022482339814799999 -0.058208333151599997 0.068210095356000006</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Shank.Front">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.049832048966399999 -0.092026009893599992 0.015723047527199999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Shank.Rear">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0071183516644799999 -0.14033537863199999 0.077149356562800003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Ankle.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0047304631227599999 -0.41547569187599998 0.052961788472400004</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Ankle.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0027604871398799998 -0.40147744856399997 -0.033100695899999998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Heel">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0197283913809 0.0166523770524 -0.0048520309308500006</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Midfoot.Sup">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.11819369538800001 0.029826599183800002 -0.038849381905200001</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Midfoot.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.11343350662600001 0.010719575219000001 0.064508745018600003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Toe.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.200052182223 -0.010990911757699999 0.073268474815900014</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Toe.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.202095152754 0.0016355997027700001 -0.031177598932399998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="R.Toe.Tip">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.26077396687400001 0.0030341628105500004 -0.00058977120566700003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Thigh.Upper">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.033264026951399996 -0.19255424733000001 -0.086544359774099994</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Thigh.Front">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.10587189142800001 -0.23124049200900001 -0.016305629896800001</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Thigh.Rear">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.024027288147 -0.293451039621 -0.072249093104400003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Knee.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.00069927287372099998 -0.41402736041399996 -0.057811747031999997</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Knee.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.00043849916870400001 -0.41336846834399998 0.0500670739602</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Shank.Upper">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0038437116321599998 -0.069056778851999998 -0.074936889655199998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Shank.Front">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.046425546176399997 -0.11720105395200001 -0.021508171628399998</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Shank.Rear">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0127712272752 -0.11064648934799999 -0.085350325190399992</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Ankle.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0036975478309199997 -0.41316900973199999 -0.052492255221599997</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Ankle.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0076086759132000005 -0.390709717452 0.035608248399600001</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Heel">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.021787062251200001 0.0258759892673 0.0075726492966799999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Midfoot.Sup">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.144198465966 0.029574912149500001 0.033000186786600001</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Midfoot.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.12648983173100001 0.029447864618599998 -0.061995149593000003</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Toe.Lat">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.18758052619500001 0.0074977885377600006 -0.072085362744600007</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Toe.Med">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.203995568057 0.0075960649560900002 0.026311553281500002</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="L.Toe.Tip">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.25137688035799999 0.00873542798377 0.0019391171209799999</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="asis_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.012500072716430992 0 0.11428637912165478</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="asis_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.012500072716430992 0 -0.11428637912165478</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="midasis">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.012500072716430992 0 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="psis_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.14107224922829262 0.033797518038218732 0.049990469380018193</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="psis_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.14107224922829262 0.033797518038218732 -0.049990469380018193</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="hip_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0631253672179765 -0.059018200468292044 0.074554005130141987</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="hip_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0631253672179765 -0.059018200468292044 -0.074554005130141987</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="midhip">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/pelvis</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0631253672179765 -0.059018200468292044 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="epicondLat_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0015379610993256343 -0.3083612004147897 0.034604124734826769</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="epicondMed_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0053828638476397205 -0.30989916151411534 -0.030759221986512687</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="thighwand_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.18455533191907608 0.11534708244942257</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="upperleg1_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.10765727695279442 0.076898054966281715</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="upperleg2_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.26145338688535785 0.057673541224711286</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="malleolusLat_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0058561151601425384 -0.34718397020845049 0.041829394001018136</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="malleolusMedv_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.007529290920183263 -0.33547173988816542 -0.029280575800712697</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="shankwand_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.25097636400610879 0.10457348500254533</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="lowerleg1_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.10875642440264714 0.050195272801221755</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="knee_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 0 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="ankle_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.35973278840875589 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="toe_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.14526917301559375 0.021363113678763788 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="heel_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_r</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0093997700186560645 0.021363113678763788 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="epicondLat_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0015379610993256343 -0.3083612004147897 -0.034604124734826769</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="epicondMed_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.0053828638476397205 -0.30989916151411534 0.030759221986512687</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="thighwand_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.18455533191907608 -0.11534708244942257</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="upperleg1_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.10765727695279442 -0.076898054966281715</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="upperleg2_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/femur_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.26145338688535785 -0.057673541224711286</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="malleolusLat_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0058561151601425384 -0.34718397020845049 -0.041829394001018136</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="malleolusMedv_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.007529290920183263 -0.33547173988816542 0.029280575800712697</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="shankwand_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.25097636400610879 -0.10457348500254533</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="lowerleg1_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.10875642440264714 -0.050195272801221755</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="knee_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 0 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="ankle_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/tibia_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0 -0.35973278840875589 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>true</fixed>
+				</Marker>
+				<Marker name="toe_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.14526917301559375 0.021363113678763788 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="heel_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/calcn_l</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.0093997700186560645 0.021363113678763788 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="subclavicle_r">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.027382310484700096 0.34684259947286789 0.061610198590575219</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="subclavicle_l">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.027382310484700096 0.34684259947286789 -0.061610198590575219</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="neck">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>-0.068455776211750238 0.38563420599285969 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="sternalnotch">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.027382310484700096 0.34684259947286789 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+				<Marker name="xyphoidprocess">
+					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
+					<socket_parent_frame>/bodyset/torso</socket_parent_frame>
+					<!--The fixed location of the station expressed in its parent frame.-->
+					<location>0.088992509075275311 0.20993104704936741 0</location>
+					<!--Flag (true or false) specifying whether the marker is fixed in its parent frame during the marker placement step of scaling.  If false, the marker is free to move within its parent Frame to match its experimental counterpart.-->
+					<fixed>false</fixed>
+				</Marker>
+			</objects>
+			<groups />
+		</MarkerSet>
+		<!--Geometry to be used in contact forces.-->
+		<ContactGeometrySet name="contactgeometryset">
+			<objects />
+			<groups />
+		</ContactGeometrySet>
+		<!--Probes in the model.-->
+		<ProbeSet name="probeset">
+			<objects />
+			<groups />
+		</ProbeSet>
+		<!--Additional components in the model.-->
+		<ComponentSet name="componentset">
+			<objects />
+			<groups />
+		</ComponentSet>
+	</Model>
+</OpenSimDocument>

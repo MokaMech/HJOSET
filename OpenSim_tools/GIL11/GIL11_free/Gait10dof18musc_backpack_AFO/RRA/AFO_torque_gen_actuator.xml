@@ -1,0 +1,18 @@
+<OpenSimDocument Version="40000">
+	<ForceSet name="AFO_torqueGenerator">
+		<objects>
+			<CoordinateActuator name="exo_torque_gen">
+				<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+				<appliesForce>true</appliesForce>
+				<!--Minimum allowed value for control signal. Used primarily when solving for control values.-->
+				<min_control>-1</min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving for control values.-->
+				<max_control>1</max_control>
+				<!--Name of the generalized coordinate to which the actuator applies.-->
+				<coordinate>AFO_hinge</coordinate>
+				<!--The maximum torque produced by this actuator when fully activated.-->
+				<optimal_force>40</optimal_force>
+			</CoordinateActuator>
+		</objects>
+	</ForceSet>
+</OpenSimDocument>

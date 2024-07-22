@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="40000">
+	<forceSet name="Afo_BushingForces">
+		<objects>
+			<BushingForce name="BushingForces_upperExoAttach">
+				<!--List of components that this component owns and serializes.-->
+				<components />
+				<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+				<appliesForce>true</appliesForce>
+				<!--Path to a Component that satisfies the Socket 'frame1' of type F (description: The first frame participating in this linker.).-->
+				<socket_frame1>/bodyset/exo_upper_r</socket_frame1>
+				<!--Path to a Component that satisfies the Socket 'frame2' of type F (description: The second frame participating in this linker.).-->
+				<socket_frame2>/bodyset/tibia_r</socket_frame2>
+				<!--Frames created/added to satisfy this component's connections.-->
+				<frames />
+				<!--Stiffness parameters resisting rotational deviation (Nm/rad).-->
+				<rotational_stiffness>20000 20000 50000</rotational_stiffness>
+				<!--Stiffness parameters resisting relative translation (N/m).-->
+				<translational_stiffness>0 0 0</translational_stiffness>
+				<!--Damping parameters resisting angular deviation rate. (Nm/(rad/s))-->
+				<rotational_damping>400 400 400</rotational_damping>
+				<!--Damping parameters resisting relative translational velocity. (N/(m/s))-->
+				<translational_damping>0 0 0</translational_damping>
+			</BushingForce>
+			<BushingForce name="BushingForces_lowerExoAttach">
+				<!--List of components that this component owns and serializes.-->
+				<components />
+				<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
+				<appliesForce>true</appliesForce>
+				<!--Path to a Component that satisfies the Socket 'frame1' of type F (description: The first frame participating in this linker.).-->
+				<socket_frame1>/bodyset/exo_lower_r</socket_frame1>
+				<!--Path to a Component that satisfies the Socket 'frame2' of type F (description: The second frame participating in this linker.).-->
+				<socket_frame2>/bodyset/talus_r</socket_frame2>
+				<!--Frames created/added to satisfy this component's connections.-->
+				<frames />
+				<!--Stiffness parameters resisting rotational deviation (Nm/rad).-->
+				<rotational_stiffness>0 0 0</rotational_stiffness>
+				<!--Stiffness parameters resisting relative translation (N/m).-->
+				<translational_stiffness>50000 0 0</translational_stiffness>
+				<!--Damping parameters resisting angular deviation rate. (Nm/(rad/s))-->
+				<rotational_damping>0 0 0</rotational_damping>
+				<!--Damping parameters resisting relative translational velocity. (N/(m/s))-->
+				<translational_damping>800 0 0</translational_damping>
+			</BushingForce>
+		</objects>
+	</forceSet>
+</OpenSimDocument>
