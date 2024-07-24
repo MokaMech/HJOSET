@@ -3,10 +3,10 @@ Human Joints Orthosis Sizing and Evaluation Tools.
 _______________________________________________________________________
 This repository is linked to "On the design of simulation-assisted human-centered variable stiffness actuator ankle orthosis" article (Link available later)
 
-It contains all the code and data elements necessary to set up the simulation illustrated in the article.
+It contains all the code and data elements necessary to set up the Human-Orthosis interaction simulation illustrated in the article.
 
 ## Article summary 
-This article, among other things, describes the design and application on examples of an early framework focused on multiple simulation software, enabling the study of a task performed by a human user (walking, picking up an object from the floor, climbing stairs or a slope...) with or without external assistance provided by human-machine devices such as orthoses or exoskeletons.
+This article, among other things, describes the design and its application on a example of an early framework focused on several simulation software, enabling the study of a MoCap recorded task performed by a human user (walking, picking up an object from the floor, climbing stairs or a slope...) with or without external assistance provided by human-machine devices such as orthoses or exoskeletons.
 _______________________________________________________________________
 ## Framework features 
 The different tools proposed in this framework include:
@@ -44,10 +44,15 @@ _______________________________________________________________________
 ## Article Experiment
 
 ### Dataset
-The dataset used to illustrate this framework is drawn from [Liu et al. 2008][^2]
-### How to use
-### Repository content
+The dataset used to illustrate this framework is drawn from a [project](https://simtk.org/projects/mspeedwalksims) available on SimTK forum and presented in [Liu et al. 2008][^2]
+Only a part of this dataset was used to run a demonstration of the framework.
 
+### How to use
+
+### Repository content
+This repository relies on two main folders.
+ - The Matlab_tools folder house all you need to provide your Matlab environment with the custom code to run the different design tools.
+ - The OpenSim_tools folder 
 _______________________________________________________________________
 **Citations** : 
 [^1]: [Muller et al. 2019](http://joss.theoj.org/papers/10.21105/joss.00927)
