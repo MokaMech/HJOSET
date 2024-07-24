@@ -37,11 +37,10 @@ Additionnal functions such as GRFM estimation need :
 - First step is to install the latest version of OpenSim (at least 4.0) and MatLab (at least 2019).
 - If you want to compute GRF prediction since you lack this data, make sure your MatLab installation fullfill the requested toolbox described above.
 - I recommand also to install Mokka software to preview, label MoCap data and translate it into other CusToM compatible formats.
-- Since you get all those 3 software, paste the content of the **Matlab_tools/CusToM_master/Models** folder of this repo into your CusToM/Models installation directory. This will allow you to use
-  the dedicated Gait2354 model and markers adapted from OpenSim to CusToM.
-- 
+- Since you get all those 3 software, paste the content of the **Matlab_tools/CusToM_master/Models** folder of this repo into your CusToM/Models installation directory. This will allow you to use the dedicated Gait2354 model and markers adapted from OpenSim to CusToM.
+
 _______________________________________________________________________
-## Article Experiment
+## Experiment
 
 ### Dataset
 The dataset used to illustrate this framework is drawn from a [project](https://simtk.org/projects/mspeedwalksims) available on SimTK forum and presented in [Liu et al. 2008][^2]
@@ -51,8 +50,27 @@ Only a part of this dataset was used to run a demonstration of the framework.
 
 ### Repository content
 This repository relies on two main folders.
- - The Matlab_tools folder house all you need to provide your Matlab environment with the custom code to run the different design tools.
- - The OpenSim_tools folder 
+ - The **Tools** folder house all you need to provide your Matlab environment with the custom code to run the different design tools.
+   * "CusToM_Excel_process" folder archives all spreadsheets necessary to understand the GRF prediction protocol described in the article.
+   * "CusToM-master" contains the "Models" folder to insert in your current CusToM install location. The "Mokadim_sim_GRF_prediction" folder stores the resultats of     each CusToM simulation to predict subjects GRF in backpack carrying conditions. "OpenSim_Utilities" contains all functions to extract, manipulate and reshape data    from OpenSim.
+   * "markersLocationTF" stores the needed functions to swap from declared markersets in OpenSim to another one suitable with CusToM.
+   * Finally, "Matlab" folder contains reshaped and augmented GIL data to be used to drawn AQS curves (see "Methods" section in the article for details), as well as
+   all code to import/extract data from OpenSim .sto files, reshape and augment with subject features, draw and merge curves to get AQS cycles, and compute 
+   evaluation metrics.  At last, it also includes Simulink projects for all retained subjects and speeds to let designers sketch their assitance strategy and test 
+   it. 
+   
+ - The **Exemple** folder contains subfolders for each subjects retained from the [Liu et al. 2008] dataset for this framework exemple.
+   Each folder follows the storage system below :
+   Subject(GIL 6/8/11) > Speed(free/slow) > Load Condition(noLoad/Backpack/Backpack+Orthosis) > OpenSim tools results and models.
+   A scaled version (raw and RRA adjusted) of the default Gait10DOF18muscl or modified version for the purpose of this experiment is also present in each subfolders.
+    
+   Along with the models, each folder stores the outputs of OpenSim analysis tools.
+   - Analyze : Raw Kinematics and Markers coords in the world frame. Mostly to be used by the transform functions in the **Tools** folder for CusToM.
+   - CMC : setup files including tracking tasks and reserve actuators, plus results folder. 
+   - datafiles : Data (Kinematics and GRF) provided by the dataset.
+                 Eventually may contain the CusToM-generated GRF for backpack conditions and the Simulink-generated orthosis control signal.
+   - IK : Inverse kinematics setup file and results computed with the provided data
+   - RRA : Reduce Residual Algorythm setup file and results. 
 _______________________________________________________________________
 **Citations** : 
 [^1]: [Muller et al. 2019](http://joss.theoj.org/papers/10.21105/joss.00927)
