@@ -1,7 +1,5 @@
-# HJOSET
-Human Joints Orthosis Sizing and Evaluation Tools.
-![Oscar Alley_modif](https://github.com/user-attachments/assets/a6d31301-eceb-4bde-ad63-b066caa7caec)
-
+![Oscar Alley_modif](https://github.com/user-attachments/assets/6a2205a6-f152-4860-9dfa-d272e03285e0)
+# Human Joints Orthosis Sizing and Evaluation Tools.
 _______________________________________________________________________
 This repository is linked to "On the design of simulation-assisted human-centered variable stiffness actuator ankle orthosis" article (Link available later)
 
@@ -41,14 +39,15 @@ Additionnal functions such as GRFM estimation need :
 - I recommand also to install Mokka software to preview, label MoCap data and translate it into other CusToM compatible formats.
 - Since you get all those 3 software, paste the content of the **Matlab_tools/CusToM_master/Models** folder of this repo into your CusToM/Models installation directory. This will allow you to use the dedicated Gait2354 model and markers adapted from OpenSim to CusToM.
 
+### How to use
+[HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
+
 _______________________________________________________________________
 ## Experiment
 
 ### Dataset
 The dataset used to illustrate this framework is drawn from a [project](https://simtk.org/projects/mspeedwalksims) available on SimTK forum and presented in [Liu et al. 2008][^2]
 Only a part of this dataset was used to run a demonstration of the framework.
-
-### How to use
 
 ### Repository content
 This repository relies on two main folders.
