@@ -39,16 +39,6 @@ Additionnal functions such as GRFM estimation need :
 - I recommand also to install Mokka software to preview, label MoCap data and translate it into other CusToM compatible formats.
 - Since you get all those 3 software, paste the content of the **Matlab_tools/CusToM_master/Models** folder of this repo into your CusToM/Models installation directory. This will allow you to use the dedicated Gait2354 model and markers adapted from OpenSim to CusToM.
 
-### How to use
-[HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
-
-_______________________________________________________________________
-## Experiment
-
-### Dataset
-The dataset used to illustrate this framework is drawn from a [project](https://simtk.org/projects/mspeedwalksims) available on SimTK forum and presented in [Liu et al. 2008][^2]
-Only a part of this dataset was used to run a demonstration of the framework.
-
 ### Repository content
 This repository relies on two main folders.
  - The **Tools** folder house all you need to provide your Matlab environment with the custom code to run the different design tools.
@@ -71,7 +61,21 @@ This repository relies on two main folders.
    - datafiles : Data (Kinematics and GRF) provided by the dataset.
                  Eventually may contain the CusToM-generated GRF for backpack conditions and the Simulink-generated orthosis control signal.
    - IK : Inverse kinematics setup file and results computed with the provided data
-   - RRA : Reduce Residual Algorythm setup file and results. 
+   - RRA : Reduce Residual Algorythm setup file and results.
+
+### How to use
+[HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
+
+_______________________________________________________________________
+## Article experiment
+
+### Dataset
+The dataset used to illustrate this framework is drawn from a [project](https://simtk.org/projects/mspeedwalksims) available on SimTK forum and presented in [Liu et al. 2008][^2]
+Only a part of this dataset was used to run a demonstration of the framework.
+
+### Results
+The results presented in the article are stored in the "Exemple" section of this repository. The folder structure is explained above.
+ 
 _______________________________________________________________________
 **Citations** : 
 [^1]: [Muller et al. 2019](http://joss.theoj.org/papers/10.21105/joss.00927)
