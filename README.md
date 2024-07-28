@@ -1,5 +1,7 @@
 # HJOSET
 Human Joints Orthosis Sizing and Evaluation Tools.
+![Oscar Alley](https://github.com/user-attachments/assets/e2ddf0b1-b372-4dac-bf69-1c2a91d1b70c)
+
 _______________________________________________________________________
 This repository is linked to "On the design of simulation-assisted human-centered variable stiffness actuator ankle orthosis" article (Link available later)
 
