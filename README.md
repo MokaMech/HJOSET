@@ -7,6 +7,7 @@ It contains all the code and data elements necessary to set up the Human-Orthosi
 
 ## Article summary 
 This article, among other things, describes the design and its application on a example of an early framework focused on several simulation software, enabling the study of a MoCap recorded task performed by a human user (walking, picking up an object from the floor, climbing stairs or a slope...) with or without external assistance provided by human-machine devices such as orthoses or exoskeletons.
+This framework was used to help design a personnalized assistance for each simulated subjects. Designs performances was then evaluated regarding muscular joint torque savings.  
 _______________________________________________________________________
 ## Framework features 
 The different tools proposed in this framework include:
@@ -64,7 +65,31 @@ This repository relies on two main folders.
    - RRA : Reduce Residual Algorythm setup file and results.
 
 ### How to use
+Here is an overview of the HJOSET workflow to study a motion, with and without any extra device assistance.
+![Framework_workflow](https://github.com/user-attachments/assets/968ef420-e54c-403b-b9f2-572519003d23)
 [HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
+
+#### Step 0 (Optional) : Run the CusToM matlab toolbox to estimate GRFM from yout MoCap data
+- First thing is to gather your MoCap data, idealy with ground reaction forces and moments (GRFM).
+- If GRFM is missing, run the CusToM toolbox. Once your model setting is done, run the pipeline till "GRF estimation" to get the missing data according to the provided kinematics.
+  Instructions to start and run this toolbox can be found in the "exmeples" folder of CusToM. Follow ex.1 for GRF estimation.
+- CusToM also provide tools to add extra load onto your model to simulate load-carrying task.
+- In [Mokadim et al. 2024], a methodology is provided to estimate an extra-load carrying user GRFM based on the recorded no extra-load user GRFM while ignoring inconsistencies between OpenSim and CusToM model definitions.
+  
+#### Step 1 : Run the OpenSim tools pipeline
+- First, choose a neuromuscular model to scale according to your needs.
+- Get a static pose of the subject to run the **Scale** tool to fit the OpenSim model with the MoCap one. Make sure to add the markers from your static pose to your OpenSim models.
+- Once done, run the **Inverse Kinematics** tool.
+For the next steps, you will need the GRFM data matching the task kinematics.
+- You may be interested in **Inverse Dynamics** right after IK. Else, run the **Residual Reduction Algorithm** tool to refine your model and your kinematics for the next step.
+*Hint* : You may run this tool twice, first to get the COM-corrected model, then the second one applied onto the newly obtained model to get the matching corrected kinematics that minimize the residual.
+- Finally, run the **Computed Muscle Control** tool to obtain the muscle excitation signals, joint positions, velocities and torques.  
+
+Default config files are provided with OpenSim exemples for each tool. You may want to edit them if you want to loop steps faster and easier.
+
+#### Step 2 : Compute the Quasi-Stiffness cycle to design a cyclic-task torque-assisting device  
+#### Step 3 : Design your ideal device
+#### Step 4 : Evaluate its performances
 
 _______________________________________________________________________
 ## Article experiment
