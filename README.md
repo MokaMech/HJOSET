@@ -66,7 +66,7 @@ This repository relies on two main folders.
 
 ### How to use
 Here is an overview of the HJOSET workflow to study a motion, with and without any extra device assistance.
-![Framework_workflow](https://github.com/user-attachments/assets/968ef420-e54c-403b-b9f2-572519003d23)
+![Framework_workflow](https://github.com/user-attachments/assets/94bc3d41-9c16-4ef2-bfc7-c97aa17cc5a2)
 [HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
 
 #### Step 0 (Optional) : Run the CusToM matlab toolbox to estimate GRFM from yout MoCap data
@@ -80,9 +80,13 @@ Here is an overview of the HJOSET workflow to study a motion, with and without a
 - First, choose a neuromuscular model to scale according to your needs.
 - Get a static pose of the subject to run the **Scale** tool to fit the OpenSim model with the MoCap one. Make sure to add the markers from your static pose to your OpenSim models.
 - Once done, run the **Inverse Kinematics** tool.
+
 For the next steps, you will need the GRFM data matching the task kinematics.
+
 - You may be interested in **Inverse Dynamics** right after IK. Else, run the **Residual Reduction Algorithm** tool to refine your model and your kinematics for the next step.
+  
 *Hint* : You may run this tool twice, first to get the COM-corrected model, then the second one applied onto the newly obtained model to get the matching corrected kinematics that minimize the residual.
+
 - Finally, run the **Computed Muscle Control** tool to obtain the muscle excitation signals, joint positions, velocities and torques.  
 
 Default config files are provided with OpenSim exemples for each tool. You may want to edit them if you want to loop steps faster and easier.
