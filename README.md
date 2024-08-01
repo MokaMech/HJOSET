@@ -109,7 +109,7 @@ This allow the designer to scale its assistance based on the amount of "weight" 
 - After that, you can check the torque generation split between scaled active and passive actuators to better observe the device inner torque generation. 
 - Once the torque error between your ideal unscaled device assitance and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a *.sto* file.
   
-#### Step 4 : Evaluate its performances
+#### Step 4 : Evaluate your device performances
 The authors of [Mokadim et al.2024] wish to compare the muscle activity of a simulated user walking without additional load with that of a user wearing a backpack and an ankle-foot orthosis on both legs.
 As in the modified Gait10DOF18Musc models wearing orthosis provided in the repository, it is possible to use the OpenSim "Bushing Forces" to add compliant links between the device(s) and the body model for a more realistic representation.
 
