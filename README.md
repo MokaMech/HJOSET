@@ -15,7 +15,7 @@ The different tools proposed in this framework include:
 - The use of OpenSim tools such as "Scaling", "Inverse Kinematics", "Inverse Dynamics", "Residual Reduction Algorithm" and "Computed Muscle Control". This sequence of tools enables, from motion capture data augmented with Ground Reaction Forces and Moments (GRFM), to successively determine joint kinematics from the task recording, calculate the joint torques required to generate these trajectories, and finally trace back to the muscle activation of the simulated musculoskeletal model that allows for the completion of this task.
 This last function "CMC" is often used in two scenarios :
   * The possibility to add external assistance to the model and defining the actuation profile of this assistance.
-  * Thanks to the muscle activation values with and without extra assistance, calculating a performance metric based on the variations in activity of certain muscles during        the task with assistance.
+  * Thanks to the muscle activation values with and without extra assistance, calculating a performance metric based on the variations in activity of certain muscles during the task with assistance.
 
 - In the case where motion capture data is not augmented with GRFM data, or to simulate the wearing of additional load not present during the task recording, a MatLab toolkit named "CusToM" presented in [Muller et al. 2019][^1] allows for the prediction of GRFM from the kinematic data and the characteristics of the simulated user.
 
@@ -69,7 +69,7 @@ Here is an overview of the HJOSET workflow to study a motion, with and without a
 ![Framework_workflow](https://github.com/user-attachments/assets/94bc3d41-9c16-4ef2-bfc7-c97aa17cc5a2)
 [HJOSET_workflow.pdf](https://github.com/user-attachments/files/16405244/HJOSET_workflow.pdf)
 
-#### Step 0 (Optional) : Run the CusToM matlab toolbox to estimate GRFM from yout MoCap data
+#### Step 0 (Optional) : Run the CusToM matlab toolbox to estimate GRFM from your MoCap data
 - First thing is to gather your MoCap data, idealy with ground reaction forces and moments (GRFM).
 - If GRFM is missing, run the CusToM toolbox. Once your model setting is done, run the pipeline till "GRF estimation" to get the missing data according to the provided kinematics.
   Instructions to start and run this toolbox can be found in the "exmeples" folder of CusToM. Follow ex.1 for GRF estimation.
@@ -106,11 +106,20 @@ One if free to implement an other stategy, or just bypass any unwanted feature.
 As expected in the Simulink project, QSC torque component should be expressed in Nm/deg/**Kg**.
 This allow the designer to scale its assistance based on the amount of "weight" the device should relieve. A “weight assistance” gain block is provided for this purpose.
 
-- After that, you can check the torque generation split between scaled active and passive actuators to better understand the device inner torque generation. 
-- Since the torque error between your ideal unscaled device assitance and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a .sto file.
+- After that, you can check the torque generation split between scaled active and passive actuators to better observe the device inner torque generation. 
+- Once the torque error between your ideal unscaled device assitance and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a *.sto* file.
   
 #### Step 4 : Evaluate its performances
+The authors of [Mokadim et al.2024] wish to compare the muscle activity of a simulated user walking without additional load with that of a user wearing a backpack and an ankle-foot orthosis on both legs.
+As in the modified Gait10DOF18Musc models wearing orthosis provided in the repository, it is possible to use the OpenSim "Bushing Forces" to add compliant links between the device(s) and the body model for a more realistic representation.
 
+- Modify your model by adding an additional load or device by editing the .osim file. 
+- The next step consists in re-runing OpenSim **RRA** and **CMC** tools with an augmented model based on your task study and the device you wish to test.
+- One can edit the mass and inertia properties of the existing ankle-foot orthosis, or design another simple joint orthosis with mass and inertia properties.
+- When proceeding to the **CMC** tool, tick the "Actuator constraints" checkbox and provide your device controller *.sto* file.
+- The final result files you get from the **CMC** tool now display the effets of your design. The final step consists in using the "ComputeAFOmetrics" evaluation script to compute metrics based on the 2 different conditions results.
+Again, one is free to add/modify the metrics computed in the script if needed.
+   
 _______________________________________________________________________
 ## Article experiment
 
