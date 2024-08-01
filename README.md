@@ -91,8 +91,24 @@ For the next steps, you will need the GRFM data matching the task kinematics.
 
 Default config files are provided with OpenSim exemples for each tool. You may want to edit them if you want to loop steps faster and easier.
 
-#### Step 2 : Compute the Quasi-Stiffness cycle to design a cyclic-task torque-assisting device  
+#### Step 2 : Compute the Quasi-Stiffness cycle to design a cyclic-task torque-assisting device
+- Since your subject is executing a cyclic motion, such as walking, running, climbing stairs up or down and so on, you can define a **joint quasi-stiffness cycle** (QSC)
+- First thing is to plot a joint torque response against the angular position. If you get a looped plot, here is a QSC cycle you can use to define your device assistance profil.
+- If not, in case your MoCap data are not available on a whole task cycle, you can filter/merge data (use Matlab or a spreadsheet with graphs for that ) until you get a QSC.
+  
 #### Step 3 : Design your ideal device
+- Once you are done with obtaining the QSC, you can use it either to loop define and test passives actuators stiffness like springs, or use the cycle as an active actuator controler input such as motor.
+  Use the Simulink project template to declare your actuating strategy and global mechanism to simulate the torque response of your device.
+The default Simulink project blocks are divided into 2 sections : main actuators are passives, and active actuators are implemented to supply the missing torque (up to a specific limit) between passive actuators and QSC reference.
+One if free to implement an other stategy, or just bypass any unwanted feature.
+
+**Warning**
+As expected in the Simulink project, QSC torque component should be expressed in Nm/deg/**Kg**.
+This allow the designer to scale its assistance based on the amount of "weight" the device should relieve. A “weight assistance” gain block is provided for this purpose.
+
+- After that, you can check the torque generation split between scaled active and passive actuators to better understand the device inner torque generation. 
+- Since the torque error between your ideal device and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a .sto file.
+  
 #### Step 4 : Evaluate its performances
 
 _______________________________________________________________________
