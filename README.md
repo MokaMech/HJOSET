@@ -107,7 +107,7 @@ As expected in the Simulink project, QSC torque component should be expressed in
 This allow the designer to scale its assistance based on the amount of "weight" the device should relieve. A “weight assistance” gain block is provided for this purpose.
 
 - After that, you can check the torque generation split between scaled active and passive actuators to better understand the device inner torque generation. 
-- Since the torque error between your ideal device and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a .sto file.
+- Since the torque error between your ideal unscaled device assitance and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a .sto file.
   
 #### Step 4 : Evaluate its performances
 
