@@ -78,7 +78,7 @@ One if free to implement any other stategy, or just bypass any unwanted feature.
 
 **Warning**
 As expected in the Simulink project, QSC torque component should be expressed in Nm/deg/**Kg** and angular position expressed in deg.
-This allow the designer to scale its assistance based on the amount of "weight" the device should relieve. A “weight assistance” gain block is provided for this purpose.
+This allow the designer to scale its assistance based on the amount of body mass the device should relieve. A “weight assistance” gain block is provided for this purpose.
 
 - After that, you can check the torque generation split between scaled active and passive actuators to better observe the device inner torque generation. 
 - Once the torque error between your ideal unscaled device assitance and the subject's joint QSC is low enough, you can export the ouput control signal as a device controler for **OpenSim CMC** tool into a *.sto* file.
