@@ -1,7 +1,7 @@
 ![Oscar Alley_modif](https://github.com/user-attachments/assets/6a2205a6-f152-4860-9dfa-d272e03285e0)
 # Human Joints Orthosis Sizing and Evaluation Tools.
 _______________________________________________________________________
-This repository is linked to "On the design of simulation-assisted human-centered variable stiffness actuator ankle orthosis" article (Link available later)
+This repository is linked to "On the design of simulation-assisted human-centered quasi-stiffness actuator for ankle orthosis" article (https://doi.org/10.3390/electronics13214164)
 
 It contains all the code and data elements mandatory to set up the Human-Orthosis interaction simulation illustrated in the article.
 
